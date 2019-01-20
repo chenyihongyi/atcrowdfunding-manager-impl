@@ -17,7 +17,7 @@
     where id = #{id, jdbcType=INTEGER}
     </delete>
 
-    <insert id="insert" parameterType="com.atguigu.atcrowdfunding.bean.User">
+    <insert id="insert" parameterType="com.atguigu.atcrowdfunding.bean.User" useGeneratedKeys="true" keyProperty="id">
   insert into t_user
   (id, loginacct, userpswd, username, email, createtime)
   values (#{id, jdbcType=INTEGER},
@@ -32,10 +32,8 @@
   update t_user
   set
   loginacct = #{loginacct, jdbcType=VARCHAR},
-  userpswd = #{userpswd,jdbcType=CHAR},
   username = #{username,jdbcType=VARCHAR},
-  email = #{email,jdbcType=VARCHAR},
-  createtime = #{createtime,jdbcType=CHAR})
+  email = #{email,jdbcType=VARCHAR}
   where id = #{id, jdbcType=INTEGER}
     </update>
     
@@ -64,6 +62,7 @@
         <where>
             <if test="queryText!=null">loginacct like concat("%",#{queryText},"%")</if>
         </where>
+        order by createtime desc
         limit #{startIndex},#{pagesize}
     </select>
 

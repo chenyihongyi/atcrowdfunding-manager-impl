@@ -1,5 +1,6 @@
 package com.atguigu.atcrowdfunding.manager.controller;
 
+import com.atguigu.atcrowdfunding.bean.User;
 import com.atguigu.atcrowdfunding.manager.service.UserService;
 import com.atguigu.atcrowdfunding.util.AjaxResult;
 import com.atguigu.atcrowdfunding.util.Page;
@@ -28,6 +29,78 @@ public class UserController {
     @RequestMapping("/toIndex")
     public String toIndex(){
         return "user/index";
+    }
+
+    @RequestMapping("/toAdd")
+    public String toAdd(){
+        return "user/add";
+    }
+
+    @RequestMapping("/doAdd")
+    @ResponseBody
+    public Object doAdd(User user) {
+        AjaxResult result = new AjaxResult();
+        try {
+            int count = userService.saveUser(user);
+            result.setSuccess(count==1);
+        } catch (Exception e) {
+            result.setSuccess(false);
+            e.printStackTrace();
+            result.setMessage("保存数据失败!");
+        }
+        return result;
+    }
+
+    @RequestMapping("/toUpdate")
+    public String toUpdate(Integer id, Map map){
+        User user = userService.getUserById(id);
+        map.put("user", user);
+        return "user/update";
+    }
+
+    @RequestMapping("/doUpdate")
+    @ResponseBody
+    public Object doUpdate(User user) {
+        AjaxResult result = new AjaxResult();
+        try {
+            int count = userService.updateUser(user);
+            result.setSuccess(count==1);
+        } catch (Exception e) {
+            result.setSuccess(false);
+            e.printStackTrace();
+            result.setMessage("修改数据失败!");
+        }
+        return result;
+    }
+
+    @RequestMapping("/doDelete")
+    @ResponseBody
+    public Object doDelete(Integer id) {
+        AjaxResult result = new AjaxResult();
+        try {
+            int count = userService.deleteUser(id);
+            result.setSuccess(count == 1);
+        } catch (Exception e) {
+            result.setSuccess(false);
+            e.printStackTrace();
+            result.setMessage("删除数据失败!");
+        }
+        return result;
+    }
+
+    @RequestMapping("/doDeleteBatch")
+    @ResponseBody
+    public Object doDeleteBatch(Integer[] id) {
+        AjaxResult result = new AjaxResult();
+        try {
+            int count = userService.deleteBatchUser(id);
+            result.setSuccess(count==id.length);
+        } catch (Exception e) {
+            result.setSuccess(false);
+            e.printStackTrace();
+            result.setMessage("删除数据失败!");
+        }
+        return result;
     }
 
     //条件查询
