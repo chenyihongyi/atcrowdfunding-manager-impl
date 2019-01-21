@@ -1,5 +1,6 @@
 package com.atguigu.atcrowdfunding.manager.service.impl;
 
+import com.atguigu.atcrowdfunding.bean.Role;
 import com.atguigu.atcrowdfunding.bean.User;
 import com.atguigu.atcrowdfunding.exception.LoginFailException;
 import com.atguigu.atcrowdfunding.manager.dao.UserMapper;
@@ -7,6 +8,7 @@ import com.atguigu.atcrowdfunding.manager.service.UserService;
 import com.atguigu.atcrowdfunding.util.Const;
 import com.atguigu.atcrowdfunding.util.MD5Util;
 import com.atguigu.atcrowdfunding.util.Page;
+import com.atguigu.atcrowfunding.vo.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -73,6 +75,36 @@ public class UserServiceImpl implements UserService {
             throw new RuntimeException("批量删除失败!");
         }
         return totalCount;
+    }
+
+/*    @Override
+    public int deleteBatchUserByVO(Data data) {
+        return userMapper.deleteBatchUserByVO(data);
+    }*/
+
+    @Override
+    public int deleteBatchUserByVO(Data data) {
+        return userMapper.deleteBatchUserByVO(data.getDatas());
+    }
+
+    @Override
+    public List<Role> queryAllRole() {
+        return userMapper.queryAllRole();
+    }
+
+    @Override
+    public List<Integer> queryRoleByUserid(Integer id) {
+        return userMapper.queryRoleByUserid(id);
+    }
+
+    @Override
+    public int saveUserRoleRelationship(Integer userid, Data data) {
+        return userMapper.saveUserRoleRelationship(userid, data);
+    }
+
+    @Override
+    public int deleteUserRoleRelationship(Integer userid, Data data) {
+        return userMapper.deleteUserRoleRelationship(userid, data);
     }
 
     @Override
