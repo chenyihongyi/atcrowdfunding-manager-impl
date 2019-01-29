@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a094a123-194c-482e-86fd-cc0aee5708ea" name="Default" comment="" />
+    <list default="true" id="a094a123-194c-482e-86fd-cc0aee5708ea" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/atguigu/atcrowdfunding/manager/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/atguigu/atcrowdfunding/manager/controller/UserController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/atguigu/atcrowdfunding/manager/service/impl/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/atguigu/atcrowdfunding/manager/service/impl/UserServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mybatis/UserMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/UserMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/META-INF/maven/com.atguigu.demo/atcrowdfunding-manager-impl/pom.properties" afterPath="$PROJECT_DIR$/target/classes/META-INF/maven/com.atguigu.demo/atcrowdfunding-manager-impl/pom.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mybatis/UserMapper.xml" afterPath="$PROJECT_DIR$/target/classes/mybatis/UserMapper.xml" />
+    </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -75,9 +82,9 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -193,15 +200,17 @@
       <workItem from="1547300436329" duration="1222000" />
       <workItem from="1547903649009" duration="88000" />
       <workItem from="1547982202018" duration="63000" />
+      <workItem from="1548080871874" duration="82000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1373000" />
+    <option name="totallyTimeSpent" value="1455000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <layout>
+      <window_info id="Key Promoter X" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />

@@ -43,7 +43,7 @@ public class UserServiceImpl implements UserService {
         Integer startIndex = page.getStartIndex();
         paramMap.put("startIndex", startIndex);
         List<User> datas = userMapper.queryList(paramMap);
-        page.setDatas(datas);
+        page.setData(datas);
         Integer totalsize = userMapper.queryCount(paramMap);
         page.setTotalsize(totalsize);
         return page;
