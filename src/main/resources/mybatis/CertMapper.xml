@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.atguigu.atcrowdfunding.manager.dao.CertMapper">
+
+<select id="queryById" resultType="Cert">
+  select * from t_cert where id = #{id}
+</select>
+
+    <delete id="deleteCerts">
+    delete from t_cert where id in
+    <foreach collection="datas" item="cert" open="(" close=")" separator=",">
+    #{cert.id}
+    </foreach>
+    </delete>
+
+    <delete id="deleteCert">
+    delete from t_cert where id =#{id}
+    </delete>
+
+    <update id="updateCert">
+    update
+    t_cert
+    set name = #{name}
+    where id = #{id}
+    </update>
+    
+    <insert id="insertCert">
+        insert into t_cert (
+        name
+        ) values (
+        #{name}
+        )
+    </insert>
+    
+    <select id="pageQuery" resultType="Cert">
+        select * from t_cert
+        <where>
+            <if test="pagetext != null">
+            and name like concat('%', #{pagetext}, '%')
+            </if>
+        </where>
+        limit #{startIndex}, #{pagesize}
+    </select>
+    
+    <select id="queryCount" resultType="int">
+      select count(*) from t_cert
+        <where>
+            <if test="pagetext !=null">
+                and name like concat('%', #{pagetext}, '%')
+            </if>
+        </where>
+    </select>
+
+
+</mapper>

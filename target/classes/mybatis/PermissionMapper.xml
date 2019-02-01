@@ -55,5 +55,9 @@
         from t_permission where pid = #{id}
     </select>
 
+    <select id="queryPermissionidsByRoleid" parameterType="int" resultType="int">
+    select permissionid
+    from t_role_permission where roleid = #{roleid}
+    </select>
 
 </mapper>

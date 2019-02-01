@@ -53,4 +53,9 @@ public class PermissionServiceImpl implements PermissionService {
 	public int deletePermission(Integer id) {
 		return permissionMapper.deleteByPrimaryKey(id);
 	}
+
+	@Override
+	public List<Integer> queryPermissionidsByRoleid(Integer roleid) {
+		return permissionMapper.queryPermissionidsByRoleid(roleid);
+	}
 }

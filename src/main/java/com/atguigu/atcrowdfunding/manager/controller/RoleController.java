@@ -53,16 +53,22 @@ public class RoleController extends BaseController {
 
     @RequestMapping("/loadDataAsync")
     @ResponseBody
-    public Object loadDataAsync() {
+    public Object loadDataAsync(Integer roleid) {
 
         List<Permission> root = new ArrayList<Permission>();
 
         List<Permission> childredPermissons = permissionService.queryAllPermission();
 
+        //根据角色id查询该角色之前所分配过的许可
+        List<Integer> permissonIdsForRoleid =permissionService.queryPermissionidsByRoleid(roleid);
+
         Map<Integer, Permission> map = new HashMap<Integer, Permission>();
 
         for (Permission innerpermission : childredPermissons) {
             map.put(innerpermission.getId(), innerpermission);
+            if(permissonIdsForRoleid.contains(innerpermission.getId())){
+                innerpermission.setChecked(true);
+            }
         }
         for (Permission permission : childredPermissons) {
             Permission child = permission;

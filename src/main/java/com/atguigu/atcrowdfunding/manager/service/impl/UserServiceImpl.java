@@ -1,5 +1,6 @@
 package com.atguigu.atcrowdfunding.manager.service.impl;
 
+import com.atguigu.atcrowdfunding.bean.Permission;
 import com.atguigu.atcrowdfunding.bean.Role;
 import com.atguigu.atcrowdfunding.bean.User;
 import com.atguigu.atcrowdfunding.exception.LoginFailException;
@@ -105,6 +106,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public int deleteUserRoleRelationship(Integer userid, Data data) {
         return userMapper.deleteUserRoleRelationship(userid, data);
+    }
+
+    @Override
+    public List<Permission> queryPermissionByUserid(Integer id) {
+        return userMapper.queryPermissionByUserid(id);
     }
 
     @Override
