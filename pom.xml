@@ -12,6 +12,11 @@
   		<artifactId>atcrowdfunding-common</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
+	  <dependency>
+		  <groupId>javax.servlet</groupId>
+		  <artifactId>servlet-api</artifactId>
+		  <scope>compile</scope>
+	  </dependency>
   </dependencies>
   <parent>
   	<groupId>com.atguigu.demo</groupId>
